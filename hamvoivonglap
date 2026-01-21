@@ -1,0 +1,89 @@
+package LEC_6_ARRAY;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ex_with_ham {
+
+    public static void nhapMang(int n, int a[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("nhap cac phan tu cua mang: ");
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+
+    }
+
+    public static void xuatMang(int n, int a[]) {
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < n; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+
+    public static void daoMang(int n, int a[]) {
+        for (int i = a.length - 1; i >= 0; i--) {
+            System.out.print(a[i] + " ");
+        }
+    }
+
+    public static void hamChan(int n, int a[]) {
+        for (int i = 0; i < n; i++) {
+            if (a[i] % 2 == 0) {
+                System.out.print(a[i] + " ");
+            }
+        }
+    }
+
+    public static int tinhtong(int n, int a[]) {
+        int tong = 0;
+        for (int i = 0; i < n; i++) {
+            if (a[i] % 15 == 0) {
+                tong += a[i];
+            }
+        }
+        return tong;
+    }
+
+    public static void sapXepTang(int n, int a[]) {
+        Arrays.sort(a);
+        for (int i = 0; i < n; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+
+    public static void sapXepGiam(int n, int a[]) {
+        Arrays.sort(a);
+        for (int i = a.length - 1; i >= 0; i--) {
+            System.out.print(a[i] + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("nhap so luong phan tu cua mang: ");
+        int n = sc.nextInt();
+        int[] a = new int[n];
+        nhapMang(n, a);
+
+        System.out.print("mang sau khi nhap la: ");
+        xuatMang(n, a);
+
+        System.out.print("\nmang sau khi dao la: ");
+        daoMang(n, a);
+
+        System.out.print("\nMang gom so chan: ");
+        hamChan(n, a);
+
+        System.out.print("\ntong cac so chia het cho 3 va 5 cua mang la: " + tinhtong(n, a));
+
+        System.out.print("\nMang sau khi sap xep tang  la: ");
+        sapXepTang(n, a);
+
+        System.out.print("\nMang sau khi sap xep giam  la: ");
+        sapXepGiam(n, a);
+
+    }
+
+}
